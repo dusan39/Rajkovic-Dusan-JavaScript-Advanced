@@ -1,17 +1,18 @@
-import getProfile from './profile';
+import axios from 'axios';
 import '../style/main.scss';
+var _ = require('lodash');
 
-/*function draw(){
-  const el = document.createElement('div');
-  const btn = document.createElement('button');
-  el.innerHTML = 'Hello';
-  el.classList.add('hello');
+//GET
+axios.get('https://reqres.in/api/users?page=2')
+.then((res) => {handleResult(res)})
+.catch((err) => console.log(err))
 
-  btn.innerHTML = 'GET PROFILE';
-  btn.onclick = getProfile;
-  el.appendChild(btn);
-  return el;
+function handleResult(data){
+  console.log(data);
 }
 
+console.log(process.env.API_ID);
 
-document.body.appendChild(draw());*/
+/*axios.get(process.env.API_ID)
+.then((res) => {handleResult(res)})
+.catch((err) => console.log(err))*/

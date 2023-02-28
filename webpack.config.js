@@ -1,12 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   mode: 'development',
   entry: {
     app: './src/JavaScript/index.js',
-    profile: './src/JavaScript/profile.js',
   },
   devtool: 'inline-source-map',
   devServer:{
@@ -21,9 +21,11 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Get Profile',
       filename: 'index.html',
       template: 'src/HTML/index.html',
+    }),
+    new Dotenv({
+      API_ID: 'https://hacker-news.firebaseio.com/v0/newstories.json'
     })
   ],
   output: {
