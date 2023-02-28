@@ -24,9 +24,9 @@ module.exports = {
       filename: 'index.html',
       template: 'src/HTML/index.html',
     }),
-    new Dotenv({
-      API_ID: 'https://hacker-news.firebaseio.com/v0/newstories.json'
-    })
+  new Dotenv({
+      systemvars: true,
+    }),
   ],
   output: {
     filename: '[name].bundle.js',
