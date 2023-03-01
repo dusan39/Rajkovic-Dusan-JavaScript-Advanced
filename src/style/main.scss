@@ -3,3 +3,56 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body{
+
+  .title{
+    display: flex;
+    justify-content: center;
+  }
+
+  #news-div{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    border: 1px solid red;
+    border-radius: 5px;
+    
+    #news-container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 5px 10px;
+
+      #title-container{
+        display: flex;
+        justify-content: center;
+
+        #title-value{
+          text-align: center;
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+
+      #date-value{
+        margin-bottom: 16px;
+      }
+
+      #url-value{
+        text-decoration: none;
+        color: black;
+        border: 1px solid red;
+        padding: 3px 15px;
+        border-radius: 5px;
+        transition: 0.3s all;
+
+        &:hover{
+          color: white;
+          background-color: black;
+        }
+      }
+    }
+  }
+}

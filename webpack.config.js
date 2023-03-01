@@ -26,7 +26,7 @@ module.exports = {
     }),
   new Dotenv({
       systemvars: true,
-    }),
+    })
   ],
   output: {
     filename: '[name].bundle.js',
