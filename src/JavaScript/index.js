@@ -12,17 +12,19 @@ const BASE_NEWS = process.env.API_BASE;
 
 // Dichiarazioni variabili
 let listIdArr = [];
+const loadMore = document.getElementById('load-more');
 
 function getId(){
+  
   axios.get(LATEST_NEWS)
     .then((res) => {
-      listIdArr = res.data[0];
-      getNews();   
-    })
-    .catch((err) => { console.log(err);} );
+      for(var i = 0; i <10; i++){
+      listIdArr = res.data[i];
+      getNews();
+    }   
+  })
+  .catch((err) => { console.log(err);} );
 }
-
-getId();
 
 function getNews(){
   let url = `${ BASE_NEWS + listIdArr + '.json' }`;
@@ -34,7 +36,6 @@ function getNews(){
 
       let newsUrl = res.data.url;
       console.log('Url: ' + newsUrl);
-      getUrl(newsUrl);
 
       let newsData = res.data.time;
       convertTime(newsData);
@@ -59,7 +60,6 @@ function convertTime(newsData){
   let date = `${day}/${month}/${year}`;
 
   let fullDate = ('Time: ' + date + ' at ' + time);
-  console.log(fullDate);
 
   return fullDate;
 }
@@ -81,15 +81,16 @@ function displayNews(newsTitle, newsUrl, newsData){
   const dateValue = createElement('div', 'date-value', '',  convertTime(newsData))
   newsContainer.appendChild(dateValue);
 
-  const urlValue = createA('a', 'url-value', newsUrl, 'blank','Link to the news')
-  newsContainer.appendChild(urlValue);
-}
-
-function getUrl(newsUrl){
-  if(newsUrl === undefined){
-    // disabilitare il tasto per visualizzare l'informazione
+  if(newsUrl != undefined){
+    const urlValue = createA('a', 'url-value', newsUrl, 'blank','Link to the news')
+    newsContainer.appendChild(urlValue);
   }else{
-    // assegnare il valore all'elemento html
+    const urlNull = createElement('button', 'url-null', '','There is no news')
+    newsContainer.appendChild(urlNull);
   }
 }
+
+loadMore.addEventListener('click', getId);
+
+getId();
 

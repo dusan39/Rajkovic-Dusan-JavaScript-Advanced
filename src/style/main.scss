@@ -5,6 +5,9 @@
 }
 
 body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 
   .title{
     display: flex;
@@ -14,7 +17,7 @@ body{
   #news-div{
     display: flex;
     justify-content: center;
-    margin: 10px;
+    margin: 3% 8%;
     border: 1px solid red;
     border-radius: 5px;
     
@@ -52,6 +55,15 @@ body{
           color: white;
           background-color: black;
         }
+      }
+
+      #url-null{
+        text-decoration: none;
+        cursor: auto;
+        color: black;
+        background-color: white;
+        padding: 3px 15px;
+        border: none;
       }
     }
   }
