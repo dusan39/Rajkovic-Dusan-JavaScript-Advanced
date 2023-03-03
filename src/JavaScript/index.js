@@ -2,7 +2,6 @@
 import axios from 'axios';
 import '../style/main.scss';
 import get from 'lodash.get';
-import { result } from 'lodash';
 import { createElement } from './createHTML.js';
 import { createA } from './createHTML.js';
 
@@ -12,18 +11,34 @@ const BASE_NEWS = process.env.API_BASE;
 
 // Dichiarazioni variabili
 let listIdArr = [];
+let start = 0;
+let end = 10;
+
 const loadMore = document.getElementById('load-more');
+const pageContainer = document.getElementById('page-container');
 
 function getId(){
-  
+  console.log('start before: ' + start);
+  console.log('end before: ' + end);
+
   axios.get(LATEST_NEWS)
     .then((res) => {
-      for(var i = 0; i <10; i++){
+
+    for(let i = start; i < end && i < res.data.length; i++){
       listIdArr = res.data[i];
       getNews();
-    }   
+    }
+
+    if(end > res.data.length){
+      start = 0;
+      end = 10;
+    } else {
+      start = end;
+      end += 10;
+    }
+
   })
-  .catch((err) => { console.log(err);} );
+.catch((err) => { console.log(err);} );
 }
 
 function getNews(){
@@ -31,11 +46,11 @@ function getNews(){
   
   axios.get(url)
     .then((res) => {
+      
       let newsTitle = res.data.title;
       console.log('Title: ' + newsTitle);
 
       let newsUrl = res.data.url;
-      console.log('Url: ' + newsUrl);
 
       let newsData = res.data.time;
       convertTime(newsData);
@@ -66,8 +81,9 @@ function convertTime(newsData){
 
 
 function displayNews(newsTitle, newsUrl, newsData){
+
   const newsDiv = createElement('div', 'news-div', '', '')
-  document.body.appendChild(newsDiv);
+  pageContainer.appendChild(newsDiv);
 
   const newsContainer = createElement('div', 'news-container','', '')
   newsDiv.appendChild(newsContainer);
