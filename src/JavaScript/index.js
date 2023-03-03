@@ -1,9 +1,11 @@
-// Import of Axios, scss and get from lodash
+// Import di Axios, scss, createElement e createA
 import axios from 'axios';
 import '../style/main.scss';
-import get from 'lodash.get';
 import { createElement } from './createHTML.js';
 import { createA } from './createHTML.js';
+
+// Lodash
+const get = require('lodash.get');
 
 // API
 const LATEST_NEWS = process.env.API_NEW;
@@ -14,12 +16,16 @@ let listIdArr = [];
 let start = 0;
 let end = 10;
 
+// Dichiarazione elementi HTML
 const loadMore = document.getElementById('load-more');
 const pageContainer = document.getElementById('page-container');
 
+
+window.onload = getId();
+
+loadMore.addEventListener('click', getId);
+
 function getId(){
-  console.log('start before: ' + start);
-  console.log('end before: ' + end);
 
   axios.get(LATEST_NEWS)
     .then((res) => {
@@ -46,13 +52,12 @@ function getNews(){
   
   axios.get(url)
     .then((res) => {
-      
-      let newsTitle = res.data.title;
-      console.log('Title: ' + newsTitle);
 
-      let newsUrl = res.data.url;
+      let newsTitle = get(res, 'data.title');
 
-      let newsData = res.data.time;
+      let newsUrl = get(res, 'data.url');
+
+      let newsData = get(res, 'data.time');
       convertTime(newsData);
 
       displayNews(newsTitle, newsUrl, newsData);
@@ -105,8 +110,3 @@ function displayNews(newsTitle, newsUrl, newsData){
     newsContainer.appendChild(urlNull);
   }
 }
-
-loadMore.addEventListener('click', getId);
-
-getId();
-
