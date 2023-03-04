@@ -23,6 +23,18 @@ const pageContainer = document.getElementById('page-container');
 
 window.onload = getId();
 
+window.addEventListener('load', () => {
+  const loader = document.querySelector('.loader');
+
+  loader.classList.add('loader-hidden');
+})
+
+loadMore.addEventListener('load', () => {
+  const loader = document.querySelector('.loader');
+
+  loader.classList.add('loader-hidden');
+})
+
 loadMore.addEventListener('click', getId);
 
 function getId(){
