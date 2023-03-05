@@ -23,8 +23,8 @@ const pageContainer = document.getElementById('page-container');
 
 window.addEventListener('load', () => {
   const loader = document.querySelector('.loader');
-  loader.classList.add('loader-hidden');
   getId();
+  loader.classList.add('loader-hidden');
 })
 
 loadMore.addEventListener('click', getId);
