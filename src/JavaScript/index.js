@@ -16,18 +16,18 @@ let listIdArr = [];
 let start = 0;
 let end = 10;
 
+
 // Dichiarazione elementi HTML
 const loadMore = document.getElementById('load-more');
 const pageContainer = document.getElementById('page-container');
 
 
 window.addEventListener('load', () => {
-  const loader = document.querySelector('.loader');
   getId();
-  loader.classList.add('loader-hidden');
 })
 
 loadMore.addEventListener('click', getId);
+
 
 function getId(){
 
@@ -50,6 +50,7 @@ function getId(){
   })
 .catch((err) => { console.log(err);} );
 }
+
 
 function getNews(){
   let url = `${ BASE_NEWS + listIdArr + '.json' }`;
@@ -113,4 +114,14 @@ function displayNews(newsTitle, newsUrl, newsData){
     const urlNull = createElement('button', 'url-null', '','There is no news')
     newsContainer.appendChild(urlNull);
   }
+
+  const loader = document.querySelector('.loader');
+  loader.classList.add('loader-hidden');
 }
+
+// Year update of the footer
+let footerDate = new Date().getFullYear();
+const footer = document.querySelector('footer');
+
+const footerDateDisplay = createElement('p', 'footer-date', '', footerDate)
+footer.appendChild(footerDateDisplay);
