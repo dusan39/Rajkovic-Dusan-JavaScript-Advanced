@@ -68,6 +68,9 @@ function getNews(){
       displayNews(newsTitle, newsUrl, newsData);
 
     })
+    .then((res) => {
+      loader.classList.add('loader-hidden')
+    })
     .catch((err) => { console.log(err);} );
 }
 
