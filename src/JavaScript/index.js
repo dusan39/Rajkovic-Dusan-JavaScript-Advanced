@@ -16,7 +16,6 @@ let listIdArr = [];
 let start = 0;
 let end = 10;
 
-
 // Dichiarazione elementi HTML
 const loadMore = document.getElementById('load-more');
 const pageContainer = document.getElementById('page-container');
@@ -74,6 +73,7 @@ function getNews(){
     })
     .catch((err) => { console.log(err);} );
 }
+
 
 function convertTime(newsData){
   let dateObj = new Date(newsData * 1000);
