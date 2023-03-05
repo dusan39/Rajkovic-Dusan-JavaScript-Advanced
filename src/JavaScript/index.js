@@ -26,8 +26,6 @@ window.addEventListener('load', () => {
   getId();
 })
 
-getId();
-
 loadMore.addEventListener('click', getId);
 
 
