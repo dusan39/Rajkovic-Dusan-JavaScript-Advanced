@@ -23,10 +23,9 @@ const pageContainer = document.getElementById('page-container');
 
 window.addEventListener('load', () => { 
   getId();
-})
+});
 
 loadMore.addEventListener('click', getId);
-
 
 function getId(){
 
@@ -36,11 +35,10 @@ function getId(){
     for(let i = start; i < end && i < res.data.length; i++){
       listIdArr = res.data[i];
       getNews();
-    }
+    }    
 
     if(end > res.data.length){
-      start = 0;
-      end = 10;
+      loadMore.style.visibility = 'hidden'
     } else {
       start = end;
       end += 10;
@@ -119,8 +117,8 @@ function displayNews(newsTitle, newsUrl, newsData){
     newsContainer.appendChild(urlNull);
   }
 
- // const loader = document.querySelector('.loader');
- // loader.classList.add('loader-hidden');
+  const loader = document.querySelector('.loader');
+  loader.classList.add('loader-hidden');
 }
 
 // Year update of the footer
