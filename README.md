@@ -27,7 +27,7 @@ Le librerie esternte utilizzate per questo progetto sono:
 
 ## Link depoly dell'app con netlify
 
-LInk: https://tech-news-test.netlify.app
+Link: https://tech-news-test.netlify.app
 
 ## Funzionalità 
 
