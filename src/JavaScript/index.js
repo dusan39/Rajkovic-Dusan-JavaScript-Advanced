@@ -69,6 +69,7 @@ function getNews(){
 
     })
     .then((res) => {
+      const loader = document.querySelector('.loader');
       loader.classList.add('loader-hidden');
     })
     .catch((err) => { console.log(err);} );
