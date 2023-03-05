@@ -70,7 +70,7 @@ function getNews(){
       displayNews(newsTitle, newsUrl, newsData);
 
     })
-    .then((res) => {
+    .then(() => {
       const loader = document.querySelector('.loader');
       loader.classList.add('loader-hidden');
     })
