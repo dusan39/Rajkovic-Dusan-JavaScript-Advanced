@@ -36,6 +36,14 @@ Inizialmente la pagina mostrerà le 10 notizie più recenti in colonna e in fond
 
 ## Struttura del progetto
 
+<img width="349" alt="Screenshot 2023-03-05 alle 14 32 31" src="https://user-images.githubusercontent.com/114413164/222963836-3f6f799d-b348-4afa-ae73-86559629a95d.png">
 
+Il progetto è suddiviso principalmente in:
+
+> index.html = qua abbiamo la struttura della pagina ma il grosso degli elementi vengono creati dinamicamente tramite js
+> createHTML.js = qua abbiamo due funzioni per creare gli elementi html tramite una funzione passandogli i parametri necessari
+> index.js = in questo file abbiamo tutte le funzioni che permettono il funzionamento dell'applicazione
+> webpack.config.js = è il file di configurazione di webpack 5 che mi ha permesso di implementare i vari plugin che mi sono serviti durante lo sviluppo del progetto
+> .env = si trovano le Environment Variables che non sono state pubblicate nella repository ma per permettere il funzionamento ho utilizzato la funzionalità di netlify per permettere comunque le chiamate API necessarie per ottenere tutte le informazioni
 
 
