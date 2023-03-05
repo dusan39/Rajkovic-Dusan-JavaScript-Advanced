@@ -20,7 +20,6 @@ let end = 10;
 const loadMore = document.getElementById('load-more');
 const pageContainer = document.getElementById('page-container');
 
-const loader = document.querySelector('.loader');
 
 window.addEventListener('load', () => { 
   getId();
@@ -120,8 +119,8 @@ function displayNews(newsTitle, newsUrl, newsData){
     newsContainer.appendChild(urlNull);
   }
 
-  const loader = document.querySelector('.loader');
-  loader.classList.add('loader-hidden');
+ // const loader = document.querySelector('.loader');
+ // loader.classList.add('loader-hidden');
 }
 
 // Year update of the footer
