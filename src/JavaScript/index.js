@@ -20,8 +20,9 @@ let end = 10;
 const loadMore = document.getElementById('load-more');
 const pageContainer = document.getElementById('page-container');
 
+const loader = document.querySelector('.loader');
 
-window.addEventListener('load', () => {
+window.addEventListener('load', () => { 
   getId();
 })
 
