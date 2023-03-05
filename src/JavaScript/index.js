@@ -22,9 +22,9 @@ const loadMore = document.getElementById('load-more');
 const pageContainer = document.getElementById('page-container');
 
 
-/*window.addEventListener('load', () => {
+window.addEventListener('load', () => {
   getId();
-})*/
+})
 
 getId();
 
