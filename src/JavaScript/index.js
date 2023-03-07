@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 loadMore.addEventListener('click', () => {
   loaderBtn.classList.add('loading-visible');
-  loadingText.innerHTML = 'Loading...';
+  loadingText.innerHTML = 'Loading... ';
   getId();
 });
 
@@ -125,7 +125,7 @@ function displayNews(newsTitle, newsUrl, newsData){
   }
   const loadingText = document.querySelector('.loading-text');
   loaderBtn.classList.remove('loading-visible');
-  loadingText.innerHTML = 'Load more';
+  loadingText.innerHTML = 'Load more ';
 
   const loader = document.querySelector('.loader');
   loader.classList.add('loader-hidden');
@@ -137,4 +137,3 @@ const footer = document.querySelector('footer');
 
 const footerDateDisplay = createElement('p', 'footer-date', '', footerDate)
 footer.appendChild(footerDateDisplay);
-
