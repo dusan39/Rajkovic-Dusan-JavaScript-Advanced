@@ -64,7 +64,7 @@ body{
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        padding: 5px 10px;
+        padding: 10px 0px;
   
         #title-container{
           display: flex;
@@ -102,6 +102,7 @@ body{
         #url-null{
           text-decoration: none;
           font-weight: bold;
+          font-size: 18px;
           cursor: auto;
           color: black;
           background: rgb(194, 213, 251);
@@ -118,8 +119,10 @@ body{
     margin-bottom: 20px;
 
     #load-more{
+      display: flex;
       text-decoration: none;
       text-align: center;
+      align-items: center;
       color: black;
       background: white;
       border: 2px solid rgb(54, 106, 219);
@@ -134,8 +137,13 @@ body{
         background-color: rgb(54, 106, 219);
       }
       
+      .loading-text{
+        margin-bottom: 0px;
+      }
     }
   }
+
+  
 
   .loader{
     position: fixed;
@@ -172,6 +180,43 @@ body{
     opacity: 0;
     visibility: hidden;
   }
+
+  // inizio
+
+.loading{
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+
+.loading-visible{
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+
+  border: 3px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  border-top-color: rgb(122, 79, 79);
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+
+.loading-hidden{
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+  visibility: hidden;
+}
+ 
+  // fine
+  
 
   footer{
     display: flex;

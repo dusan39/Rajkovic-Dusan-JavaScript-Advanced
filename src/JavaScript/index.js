@@ -1,4 +1,4 @@
-// Import di Axios, scss, createElement e createA
+// Import di Axios, sass, createElement e createA
 import axios from 'axios';
 import '../style/main.scss';
 import { createElement } from './createHTML.js';
@@ -19,13 +19,20 @@ let end = 10;
 // Dichiarazione elementi HTML
 const loadMore = document.getElementById('load-more');
 const pageContainer = document.getElementById('page-container');
+const loaderBtn = document.querySelector('.loading');
+const loadingText = document.querySelector('.loading-text');
 
 
-window.addEventListener('DOMContentLoaded', () => { 
+window.addEventListener('DOMContentLoaded', () => {
+  loaderBtn.classList.remove('loading'); 
   getId();
 });
 
-loadMore.addEventListener('click', getId);
+loadMore.addEventListener('click', () => {
+  loaderBtn.classList.add('loading-visible');
+  loadingText.innerHTML = 'Loading...';
+  getId();
+});
 
 function getId(){
 
@@ -116,6 +123,9 @@ function displayNews(newsTitle, newsUrl, newsData){
     const urlNull = createElement('button', 'url-null', '','There is no news')
     newsContainer.appendChild(urlNull);
   }
+  const loadingText = document.querySelector('.loading-text');
+  loaderBtn.classList.remove('loading-visible');
+  loadingText.innerHTML = 'Load more';
 
   const loader = document.querySelector('.loader');
   loader.classList.add('loader-hidden');
@@ -127,3 +137,4 @@ const footer = document.querySelector('footer');
 
 const footerDateDisplay = createElement('p', 'footer-date', '', footerDate)
 footer.appendChild(footerDateDisplay);
+
