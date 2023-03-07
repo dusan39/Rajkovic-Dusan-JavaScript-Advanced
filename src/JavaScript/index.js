@@ -17,8 +17,8 @@ let start = 0;
 let end = 10;
 
 // Dichiarazione elementi HTML
-const loadMore = document.getElementById('load-more');
-const pageContainer = document.getElementById('page-container');
+const loadMore = document.querySelector('#load-more');
+const pageContainer = document.querySelector('#page-container');
 const loaderBtn = document.querySelector('.loading');
 const loadingText = document.querySelector('.loading-text');
 
