@@ -32,7 +32,7 @@ Link: https://tech-news-test.netlify.app
 ## Funzionalità 
 
 Questo progetto si bassa su delle chiamate API del servizio di Hacker News che fornisce una lista di 500 ID e tamite quelli con una specifica chiamata API ti permette di estrapolare i dettagli della notizia che corrisponde allo specifico ID, in questo caso viene mostrato il titolo della notizia, quando è stata scritta e il link se presente della notizia, perchè in alcuni casi non si tratta di notizie ma di commenti, storie, lavori e sondaggi.
-Inizialmente la pagina mostrerà le 10 notizie più recenti in colonna e in fondo alle notizie iniziali si troverà un tasto 'Load more' che a sua volta caricherà altre 10 notizie fino ad arrivare fino a 500 articoli totali.
+Inizialmente la pagina mostrerà le 10 notizie più recenti in colonna e in fondo alle notizie iniziali si troverà un tasto 'Load more' che a sua volta caricherà altre notizie sino ad arrivare alla fine della lista fornita.
 
 ## Struttura del progetto
 
@@ -49,5 +49,9 @@ Il progetto è suddiviso principalmente in:
 > webpack.config.js = è il file di configurazione di webpack 5 che mi ha permesso di implementare i vari plugin che mi sono serviti durante lo sviluppo del progetto
 
 > .env = si trovano le Environment Variables che non sono state pubblicate nella repository ma per permettere il funzionamento ho utilizzato la funzionalità di netlify per permettere comunque le chiamate API necessarie per ottenere tutte le informazioni
+
+Logiche del progetto
+
+
 
 
