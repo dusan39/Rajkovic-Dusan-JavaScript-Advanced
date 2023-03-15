@@ -15,6 +15,9 @@ export const createA = (tag, id, href, target, content) => {
   return el
 }
 
+export const  headerSection = createElement('section', 'top-page', '', '');
+document.body.appendChild(headerSection);
+
 export const loadMore = createElement('div', 'loader', '', '');
 document.body.appendChild(loadMore);
 
@@ -27,7 +30,7 @@ sfondoTitleContainer.appendChild(titleContainer);
 export const title = createElement('h1', 'title', '', 'Tech News');
 titleContainer.appendChild(title);
 
-export const description = createElement('p', 'description', '', 'Welcome to our tech blog showcasing the latest 500 news articles in the world of technology.');
+export const description = createElement('p', 'description', '', 'Welcome to our tech blog showcasing the latest news articles in the world of technology.');
 titleContainer.appendChild(description);
 
 export const pageContainer = createElement('div', 'page-container', '', '');

@@ -208,8 +208,6 @@ body{
     opacity: 0;
     visibility: hidden;
   }
-  
- 
 
   footer{
     display: flex;
@@ -228,7 +226,7 @@ body{
 
 @media (max-width: 900px){
   body{
-    .sfondo-title-container{
+    #sfondo-title-container{
       flex-direction: column;
       padding: 10px;
     }

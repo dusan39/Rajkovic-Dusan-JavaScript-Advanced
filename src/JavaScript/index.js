@@ -15,10 +15,6 @@ let listIdArr = [];
 let start = 0;
 let end = 10;
 
-// Creazione elementi HTML
-
-
-
 window.addEventListener('DOMContentLoaded', () => {
   loaderBtn.removeAttribute('id'); 
   getId();
@@ -41,7 +37,7 @@ function getId(){
     }    
 
     if(end > res.data.length){
-      loadMore.style.visibility = 'hidden'
+      loadMoreBtn.style.visibility = 'hidden'
     } else {
       start = end;
       end += 10;
@@ -97,28 +93,30 @@ function convertTime(newsData){
 
 function displayNews(newsTitle, newsUrl, newsData){
 
-  const newsDiv = createElement('div', 'news-div', '', '')
-  pageContainer.appendChild(newsDiv);
-
-  const newsContainer = createElement('div', 'news-container','', '')
-  newsDiv.appendChild(newsContainer);
-
-  const titleContainer = createElement('div', 'title-container', '', '')
-  newsContainer.appendChild(titleContainer);
-
-  const titleValue = createElement('p', 'title-value', '', newsTitle)
-  titleContainer.appendChild(titleValue);
-
-  const dateValue = createElement('div', 'date-value', '',  convertTime(newsData))
-  newsContainer.appendChild(dateValue);
-
   if(newsUrl != undefined){
+
+    const newsDiv = createElement('div', 'news-div', '', '')
+    pageContainer.appendChild(newsDiv);
+  
+    const newsContainer = createElement('div', 'news-container','', '')
+    newsDiv.appendChild(newsContainer);
+  
+    const titleContainer = createElement('div', 'title-container', '', '')
+    newsContainer.appendChild(titleContainer);
+  
+    const titleValue = createElement('p', 'title-value', '', newsTitle)
+    titleContainer.appendChild(titleValue);
+  
+    const dateValue = createElement('div', 'date-value', '',  convertTime(newsData))
+    newsContainer.appendChild(dateValue);
+
     const urlValue = createA('a', 'url-value', newsUrl, 'blank','Link to the news')
     newsContainer.appendChild(urlValue);
+
   }else{
-    const urlNull = createElement('button', 'url-null', '','There is no news')
-    newsContainer.appendChild(urlNull);
+    return null;
   }
+
   const loadingText = document.querySelector('#loading-text');
   loaderBtn.classList.remove('loading-visible');
   loadingText.innerHTML = 'Load more ';
@@ -129,7 +127,6 @@ function displayNews(newsTitle, newsUrl, newsData){
 
 // Year update of the footer
 let footerDate = new Date().getFullYear();
-//const footer = document.querySelector('footer');
 
 const footerDateDisplay = createElement('p', 'footer-date', '', footerDate)
 footer.appendChild(footerDateDisplay);
