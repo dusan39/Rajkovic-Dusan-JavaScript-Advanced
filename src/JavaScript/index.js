@@ -1,8 +1,7 @@
 // Import di Axios, sass, createElement e createA
 import axios from 'axios';
 import '../style/main.scss';
-import { createElement } from './createHTML.js';
-import { createA } from './createHTML.js';
+import { createElement, createA, loadMore, loadMoreBtn, loaderBtn, pageContainer, loadingText,footer} from './createHTML.js';
 
 // Lodash
 const get = require('lodash.get');
@@ -16,19 +15,16 @@ let listIdArr = [];
 let start = 0;
 let end = 10;
 
-// Dichiarazione elementi HTML
-const loadMore = document.querySelector('#load-more');
-const pageContainer = document.querySelector('#page-container');
-const loaderBtn = document.querySelector('.loading');
-const loadingText = document.querySelector('.loading-text');
+// Creazione elementi HTML
+
 
 
 window.addEventListener('DOMContentLoaded', () => {
-  loaderBtn.classList.remove('loading'); 
+  loaderBtn.removeAttribute('id'); 
   getId();
 });
 
-loadMore.addEventListener('click', () => {
+loadMoreBtn.addEventListener('click', () => {
   loaderBtn.classList.add('loading-visible');
   loadingText.innerHTML = 'Loading... ';
   getId();
@@ -73,7 +69,7 @@ function getNews(){
 
     })
     .then(() => {
-      const loader = document.querySelector('.loader');
+      const loader = document.querySelector('#loader');
       loader.classList.add('loader-hidden');
     })
     .catch((err) => { console.log(err);} );
@@ -123,17 +119,17 @@ function displayNews(newsTitle, newsUrl, newsData){
     const urlNull = createElement('button', 'url-null', '','There is no news')
     newsContainer.appendChild(urlNull);
   }
-  const loadingText = document.querySelector('.loading-text');
+  const loadingText = document.querySelector('#loading-text');
   loaderBtn.classList.remove('loading-visible');
   loadingText.innerHTML = 'Load more ';
 
-  const loader = document.querySelector('.loader');
+  const loader = document.querySelector('#loader');
   loader.classList.add('loader-hidden');
 }
 
 // Year update of the footer
 let footerDate = new Date().getFullYear();
-const footer = document.querySelector('footer');
+//const footer = document.querySelector('footer');
 
 const footerDateDisplay = createElement('p', 'footer-date', '', footerDate)
 footer.appendChild(footerDateDisplay);
