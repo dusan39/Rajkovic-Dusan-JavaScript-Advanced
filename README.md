@@ -25,7 +25,7 @@ Le librerie esternte utilizzate per questo progetto sono:
 - Struttura del progetto
 - Logiche del progetto
 
-## Link depoly dell'app con netlify
+## Link deploy dell'app con netlify
 
 Link: https://tech-news-test.netlify.app
 
@@ -42,7 +42,7 @@ Il progetto è suddiviso principalmente in:
 
 > index.html = qua abbiamo la struttura della pagina ma il grosso degli elementi vengono creati dinamicamente tramite js
 
-> createHTML.js = qua abbiamo due funzioni per creare gli elementi html tramite una funzione passandogli i parametri necessari
+> createHTML.js = qua abbiamo due funzioni per creare gli elementi html tramite una funzione passandogli i parametri necessari e tutti gli elementi html creati tramite queste due funzioni.
 
 > index.js = in questo file abbiamo tutte le funzioni che permettono il funzionamento dell'applicazione
 
