@@ -32,7 +32,7 @@ Link: https://tech-news-test.netlify.app
 ## Funzionalità 
 
 Questo progetto si bassa su delle chiamate API del servizio di Hacker News che fornisce una lista di 500 ID e tamite quelli con una specifica chiamata API ti permette di estrapolare i dettagli della notizia che corrisponde allo specifico ID, in questo caso viene mostrato il titolo della notizia, quando è stata scritta e il link se presente della notizia, perchè in alcuni casi non si tratta di notizie ma di commenti, storie, lavori e sondaggi.
-Inizialmente la pagina mostrerà le 10 notizie più recenti in colonna e in fondo alle notizie iniziali si troverà un tasto 'Load more' che a sua volta caricherà altre notizie sino ad arrivare alla fine della lista fornita.
+Inizialmente la pagina chiamerà l'API per ottenre gli id delle prime 10 notizie più recenti, in caso queste non fossero effettivamente delle notizie ma altri tipi di dati allora quell'id viene saltato e non viene visualizzato in colonna e in fondo alle notizie iniziali si troverà un tasto 'Load more' che a sua volta caricherà altre notizie sino ad arrivare alla fine della lista fornita.
 
 ## Struttura del progetto
 
