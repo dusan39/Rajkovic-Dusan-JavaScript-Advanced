@@ -53,3 +53,5 @@ Il progetto è suddiviso principalmente in:
 ## Logiche del progetto
 
 Questo progetto è costituito principalmente da due file JavaScript e il file Sass per lo stile degli elementi HTML, inizialmente la pagina dovrà mostrare un loader al centro che verrà rimosso finchè non caricherà tutti gli elementi iniziali.
+Quando si vogliono visualizzare più notizie premendo il tasto load more, quel tasto cambia il testo in 'loading...' e aggiungendo un piccolo spinner di caricamento finchè non finisce la chiamata API per poter visualizzare le altre notizie.
+L'utilizzo di strumenti esterni come WebPack, Lodash e Axios mi hanno aiutato a semplificare lo sviluppo del progetto quando sono riuscito a capire effettivamente il loro potenziale. 
