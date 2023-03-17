@@ -15,9 +15,6 @@ export const createA = (tag, id, href, target, content) => {
   return el
 }
 
-export const  headerSection = createElement('section', 'top-page', '', '');
-document.body.appendChild(headerSection);
-
 export const loadMore = createElement('div', 'loader', '', '');
 document.body.appendChild(loadMore);
 
