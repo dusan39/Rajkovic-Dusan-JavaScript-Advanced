@@ -53,5 +53,3 @@ Il progetto è suddiviso principalmente in:
 ## Logiche del progetto
 
 Questo progetto è costituito principalmente da due file JavaScript e il file Sass per lo stile degli elementi HTML, inizialmente la pagina dovrà mostrare un loader al centro che verrà rimosso finchè non caricherà tutti gli elementi iniziali.
-
-
