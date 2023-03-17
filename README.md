@@ -50,8 +50,8 @@ Il progetto è suddiviso principalmente in:
 
 > .env = si trovano le Environment Variables che non sono state pubblicate nella repository ma per permettere il funzionamento ho utilizzato la funzionalità di netlify per permettere comunque le chiamate API necessarie per ottenere tutte le informazioni.
 
-Logiche del progetto
+## Logiche del progetto
 
-Questo progetto è costituito principalmente da due file JavaScript e il file Sass per lo stile degli elementi HTML, inizialmente la pagina dovrà mostrare un loader al centro che verrà rimosso finchè non caricherà tutti gli elementi iniziali, presenterà inizialmente le prime 10 notizie, poi con il tasto load more farà una chiamata per ottenere i prossimi 10 id delle news, poi in una funzione successiva si controllerà se a quell'id corrispondente esiste l'url alla notizia, se positivo il controllo allora crea il suo contenitore con il titolo, la data della notizia e il link effettivo della notizia in caso contrario salta all'id successivo finchè non trova un url. 
+Questo progetto è costituito principalmente da due file JavaScript e il file Sass per lo stile degli elementi HTML, inizialmente la pagina dovrà mostrare un loader al centro che verrà rimosso finchè non caricherà tutti gli elementi iniziali.
 
 
