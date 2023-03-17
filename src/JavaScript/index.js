@@ -85,7 +85,7 @@ function convertTime(newsData){
   let time = `${hours}:${minutes}`;
   let date = `${day}/${month}/${year}`;
 
-  let fullDate = ('Time: ' + date + ' at ' + time);
+  let fullDate = ('Date: ' + date + ' at ' + time);
 
   return fullDate;
 }
