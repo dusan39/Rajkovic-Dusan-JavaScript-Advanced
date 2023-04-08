@@ -10,7 +10,7 @@ Questo progetto è stato realizzato con l'utilizzo di:
 
 > <img src="https://img.icons8.com/color/24/null/webpack.png"/> WebPack 5
 
-Le librerie esternte utilizzate per questo progetto sono:
+Le librerie esterne utilizzate per questo progetto sono:
 
 > Lodash
  
